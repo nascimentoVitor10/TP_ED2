@@ -9,6 +9,9 @@ Este trabalho prático de programação visa simular o processo de exames de rai
 - Filas de espera: Optou-se por utilizar uma implementação de filas FIFO para simular o fluxo de pacientes e exames, garantindo que a ordem de chegada e pioridades sejam respeitadam.
 - Diagnóstico Automatizado: A IA foi implementada sendo responsável por fornecer diagnósticos preliminares com base na lista de patologias fornecidas pelo professor.
 - Modularidade: O projeto foi dividido em módulos para melhorar a organização e facilitar a manutenção do código.
+## Como executar:
+- 1º Baixe e descompacte o código;
+- 2º No terminal linux, execute: make.
 ## Criadores:
 - Allicia Rocha
 - Vitor Ramos
