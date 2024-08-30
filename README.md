@@ -15,3 +15,11 @@ Este trabalho prático de programação visa simular o processo de exames de rai
 ## Criadores:
 - Allicia Rocha
 - Vitor Ramos
+
+## Tables
+
+| Left columns  | Right columns |
+| ------------- |:-------------:|
+| left foo      | right foo     |
+| left bar      | right bar     |
+| left baz      | right baz     |
