@@ -64,8 +64,30 @@ Este trabalho prático de programação visa simular o processo de exames de rai
 | encontrar_maquina_livre | Encontra uma máquina de raio-X disponível | Maquina *cabeça | Maquina* |
 | atribuir_paciente | Adiciona um paciente em alguma máquina livre | Maquina *maquina, Exam *exam, int *indic_maquina_free | void |
 | atualizar_tempo | Atualiza o tempo na máquina | Maquina *cabeca | void |
+| contar_maquinas_livres | Conta o número de máquinas livres | Maquina *cabeca | int |
 
-int contar_maquinas_livres(Maquina *cabeca);
+### `Queue`
+#### Estrutura `Queue`
+| Variáveis | Tipo |Função |
+| :---:        |     :---:      | :---: |
+| front   | QueueNode* | Ponteiro que aponta para o primeiro elemento da fila  |
+| rear | QueueNode* | Ponteiro que aponta para o último elemento da fila    |
+
+#### Estrutura `QueueNode`
+| Variáveis | Tipo |Função |
+| :---:        |     :---:      | :---: |
+| info   | Exam* | Ponteiro que aponta para algum exame  |
+| next | QueueNode* | Ponteiro que o próximo nó da fila  |
+
+#### Funções do `Queue` 
+| Funções | Descrição | Parâmetros | Retorna |
+|:---:|:---:|:---:|:---:|
+| q_create | Cria uma fila | void | Queue* |
+| q_is_empty | Verifica se a fila está vazia | Queue *q | int |
+| q_enqueue | Adiciona um novo paciente na fila | Queue *q, Exam *exam | void |
+| q_dequeue | Remove um paciente na fila | Queue *q | void |
+| q_free | Liberar memória alocada para criar fila | Queue *q | void |
+| q_print| Conta o número de máquinas livres | Queue *q | void |
 
 ## Como executar:
 - 1º Baixe e descompacte o código;
