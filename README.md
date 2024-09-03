@@ -1,7 +1,7 @@
 # Simulação de Realização de Exames de Raio-X
 Este trabalho prático de programação visa simular o processo de exames de raio-X de tórax e diagnóstico em um hospital, com foco na organização das filas em diferentes etapas. Pacientes chegam ao hospital e são atendidos conforme a disponibilidade dos equipamentos. Uma IA sugere diagnósticos preliminares, e os exames são encaminhados para laudo médico.
 
-## Arquivos do código
+## Principais arquivos
 ### `Patient`
 #### Estrutura `Patient`
 | Variáveis | Tipo |Função |
@@ -45,27 +45,6 @@ Este trabalho prático de programação visa simular o processo de exames de rai
 |  print_exam | Imprime na tela as informações do exame | Exam *exam | void |
 |  database_exam | Registra no db.exam.txt as informações do exame | Exam *exam | void |
 
-### `Machine`
-#### Estrutura `Maquina`
-| Variáveis | Tipo |Função |
-| :---:        |     :---:      | :---: |
-| rx_id   | int | Armazena o id da máquina de raio-X     |
-| tempo_restante | int | Indica o tempo restante para máquina ficar livre  |
-| estado   | int | Indica se a máquina está ocupada ou livre |
-| proxima | Maquina* | Ponteiro que aponta para a próxima máquina |
-| paciente_atendido | Exam* | Representa o paciente atendido |
-| paciente_em_atendimento | Exam* | Representa o paciente em atendimento |
- 
-#### Funções do `Machine` 
-| Funções | Descrição | Parâmetros | Retorna |
-|:---:|:---:|:---:|:---:|
-| criar_maquinas | Cria as máquinas de raio-X | int num_maquinas | Maquina* |
-| get_rxMachine_id | Retorna o id da máquina de raio-X | Maquina *maquina | int |
-| encontrar_maquina_livre | Encontra uma máquina de raio-X disponível | Maquina *cabeça | Maquina* |
-| atribuir_paciente | Adiciona um paciente em alguma máquina livre | Maquina *maquina, Exam *exam, int *indic_maquina_free | void |
-| atualizar_tempo | Atualiza o tempo na máquina | Maquina *cabeca | void |
-| contar_maquinas_livres | Conta o número de máquinas livres | Maquina *cabeca | int |
-
 ### `Queue`
 #### Estrutura `Queue`
 | Variáveis | Tipo |Função |
@@ -79,12 +58,13 @@ Este trabalho prático de programação visa simular o processo de exames de rai
 | info   | Exam* | Ponteiro que aponta para algum exame  |
 | next | QueueNode* | Ponteiro que o próximo nó da fila  |
 
-#### Funções do `Queue` 
+#### Funções do `Queue`
+A queue foi implementada para ser genérica.
 | Funções | Descrição | Parâmetros | Retorna |
 |:---:|:---:|:---:|:---:|
 | q_create | Cria uma fila | void | Queue* |
 | q_is_empty | Verifica se a fila está vazia | Queue *q | int |
-| q_enqueue | Adiciona um novo paciente na fila | Queue *q, Exam *exam | void |
+| q_enqueue | Adiciona um novo paciente na fila | Queue *q,  StructType type, void *p | void |
 | q_dequeue | Remove um paciente na fila | Queue *q | void |
 | q_free | Liberar memória alocada para criar fila | Queue *q | void |
 | q_print| Conta o número de máquinas livres | Queue *q | void |
